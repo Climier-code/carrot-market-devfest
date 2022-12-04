@@ -17,9 +17,7 @@ const ProductItem: React.FC<Props> = (props) => {
   const { push } = useFlow();
 
   const handleLinkDetailPage = () => {
-    push('DetailPage', {
-      id,
-    });
+    push('DetailPage', { id: id.toString() });
   };
 
   return (

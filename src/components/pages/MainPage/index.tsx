@@ -32,7 +32,7 @@ const MainPage: ActivityComponentType = () => {
 export default MainPage;
 
 const ItemsWrapper = styled.section`
-  padding: 44px 0 60px;
-  height: calc(100vh - 104px);
+  padding: 2.75rem 0 60px;
+  height: calc(100vh - 2.75rem - 60px);
   overflow-y: auto;
 `;

@@ -19,4 +19,5 @@ button {
   outline: none;
   border: none;
   display: flex;
+  background: none;
 }

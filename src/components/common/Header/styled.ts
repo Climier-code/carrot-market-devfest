@@ -12,7 +12,7 @@ export const HeaderContentWrapper = styled.section`
   justify-content: space-between;
   align-items: center;
 
-  height: 44px;
+  height: 2.75rem;
 
   border-bottom: 1px solid #43474f;
 `;
