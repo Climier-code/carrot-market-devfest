@@ -20,18 +20,25 @@ export const OtherItem = styled.button`
   background-color: inherit;
   flex-direction: column;
 
-  & > div {
-    margin-bottom: 0.5rem;
-
-    & > img {
-      overflow: hidden;
-      border-radius: 0.375rem;
-      background-color: #2b2e33;
-    }
-  }
-
   & > p {
     font-size: 0.875rem;
     line-height: 1.25rem;
+  }
+`;
+
+export const OtherItemImageWrapper = styled.div`
+  margin-bottom: 0.5rem;
+  padding-bottom: 75%;
+  width: 100%;
+  position: relative;
+
+  & > div {
+    border-radius: 0.375rem;
+    background-color: #2b2e33;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
   }
 `;

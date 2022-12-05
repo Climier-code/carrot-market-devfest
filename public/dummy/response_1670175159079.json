@@ -1,0 +1,49 @@
+{
+  "profileImg": "https://i.picsum.photos/id/348/120/120.jpg?hmac=ojbdc1-LBlJdvHc7qZbxkTVFH7njinvJt3Wev3RwS0w",
+  "userName": "데브페스트",
+  "rating": 70,
+  "userID": 0,
+  "location": "강남구",
+  "other": [
+    {
+      "name": "키크론 K6 키보드 팝니다",
+      "img": "https://dnvefa72aowie.cloudfront.net/origin/article/202211/D74125630419D841D4966C7CCA42A367F0D44604C407DC94254BA534E0E3C54B.jpg?q=95&s=1440x1440&t=inside",
+      "price": 92500
+    },
+    {
+      "name": "해피해킹 hybrid Type-S 새상품",
+      "img": "https://blog.kakaocdn.net/dn/cigrn9/btqP6oiVfQH/O47ZMxCL0Qbx5hsRzaqh80/img.jpg",
+      "price": 320000
+    },
+    {
+      "name": "아이폰 11 퍼플",
+      "img": "https://blog.kakaocdn.net/dn/bTlpkQ/btqBHxngxhs/7St98RyVybaCBNPJnhoIv0/img.png",
+      "price": 105000
+    },
+    {
+      "name": "이케아 선반",
+      "img": "https://ccimg.hellomarket.com/images/2016/item/s6/08/06/17/1147_23928193_1.jpg?size=s6",
+      "price": 15000
+    },
+    {
+      "name": "필립스 면도기",
+      "img": "https://img.hankyung.com/photo/201805/01.16830265.1.jpg",
+      "price": 12000
+    },
+    {
+      "name": "다이슨 v8 청소기",
+      "img": "https://t1.daumcdn.net/cfile/tistory/2350DA3657FE8D2A1B",
+      "price": 83000
+    },
+    {
+      "name": "Macbook air m1",
+      "img": "https://i0.wp.com/opensea.kr/wp-content/uploads/2021/01/IMG_1794.jpeg?resize=900%2C640&ssl=1",
+      "price": 900000
+    },
+    {
+      "name": "리액트 책 팔아요",
+      "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTezUN1poDjNflt1pr3LX8idz0hr7G6dXQTZw&usqp=CAU",
+      "price": 25000
+    }
+  ]
+}

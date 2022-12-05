@@ -3,24 +3,27 @@ import MannerRating from 'src/assets/mannerRating.svg';
 import { UserWrapper, UserProfileImage, UserProfileContent, UserMannerRating } from './styled';
 
 interface Props {
-  imageSrc: string;
-  name: string;
+  profileImg: string;
+  userName: string;
+  rating: number;
   location: string;
 }
 
-const UserProfile: React.FC<Props> = ({ imageSrc, name, location }) => {
+const UserProfile: React.FC<Props> = (props) => {
+  const { profileImg, userName, rating, location } = props;
+
   return (
     <UserWrapper>
-      <UserProfileImage src={imageSrc} alt="mock-img" width={'100%'} height={'100%'} />
+      <UserProfileImage src={profileImg} alt="profileImg" width={'100%'} height={'100%'} />
       <UserProfileContent>
-        <p className="name">{name}</p>
+        <p className="name">{userName}</p>
         <p className="location">{location}</p>
       </UserProfileContent>
       <UserMannerRating>
         <div className="progress">
           <img src={MannerRating} alt="rating" />
         </div>
-        <p className="link">Rating</p>
+        <p className="link">매너온도</p>
       </UserMannerRating>
     </UserWrapper>
   );

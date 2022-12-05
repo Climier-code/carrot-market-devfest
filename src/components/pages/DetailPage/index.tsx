@@ -1,6 +1,8 @@
 import { AppScreen } from '@stackflow/plugin-basic-ui';
 import React from 'react';
 import { ReactComponent as Back } from 'src/assets/back.svg';
+import { ProductInterface, UserInterface } from 'src/schemas/Product';
+import { getProductData, getUserData } from 'src/services';
 import { useFlow } from 'src/utils/stackflow';
 import styled from 'styled-components';
 import OtherItems from './components/OtherItems';
@@ -16,9 +18,28 @@ type DetailParams = {
 const DetailPage: React.FC<DetailParams> = ({ params: { id } }) => {
   const { pop } = useFlow();
 
+  const [product, setProduct] = React.useState<ProductInterface>();
+  const [user, setUser] = React.useState<UserInterface>();
+
   const handleBackToMainPage = () => {
     pop();
   };
+
+  const loadUser = async (userId: number) => {
+    const { data } = await getUserData(userId);
+    setUser(data);
+  };
+
+  const loadProductDetail = async () => {
+    const { data } = await getProductData(Number(id));
+    setProduct(data);
+
+    loadUser(data.userID);
+  };
+
+  React.useEffect(() => {
+    loadProductDetail();
+  }, []);
 
   return (
     <AppScreen
@@ -32,23 +53,19 @@ const DetailPage: React.FC<DetailParams> = ({ params: { id } }) => {
             );
           },
         },
+        borderColor: '#43474f',
       }}
     >
-      <section>
-        <ProductImageWrapper>
-          <img src={'https://picsum.photos/800/800/?id=11257089'} alt="mock-img" width={'100%'} height={'100%'} />
-        </ProductImageWrapper>
-        <UserProfile name="Emila" location="Woolston" imageSrc="https://picsum.photos/800/800/?id=11257089" />
-        <ProductDetail
-          title="Private"
-          category="Baby &amp; Kids"
-          description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean elementum sit sem ullamcorper urna, lacinia eu
-          tortor, mattis. Venenatis ut cursus amet in."
-          madeAt={3}
-          articleData={{ chatsCount: 1, favoritesCount: 2, viewsCount: 212 }}
-        />
-        <OtherItems userName="Emila" id={id} />
-      </section>
+      {product && user && (
+        <section>
+          <ProductImageWrapper>
+            <img src={product.img} alt="productImg" width={'100%'} height={'100%'} />
+          </ProductImageWrapper>
+          <UserProfile {...user} />
+          <ProductDetail {...product} />
+          <OtherItems userName={user.userName} other={user.other} />
+        </section>
+      )}
     </AppScreen>
   );
 };

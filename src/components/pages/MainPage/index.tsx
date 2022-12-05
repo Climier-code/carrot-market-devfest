@@ -2,26 +2,50 @@ import { AppScreen } from '@stackflow/plugin-basic-ui';
 import { ActivityComponentType } from '@stackflow/react';
 import React from 'react';
 import Footer from 'src/components/common/Footer';
-import Header from 'src/components/common/Header';
 import ProductItem from 'src/components/common/ProductItem';
-import { PRODUCT_LIST_MOCK_DATA } from 'src/constants/productList';
-import styled from 'styled-components';
+import { ProductInterface } from 'src/schemas/Product';
+import { getProductList } from 'src/services';
+import Chevron from 'src/assets/chevron.svg';
+import Search from 'src/assets/search.svg';
+import Control from 'src/assets/control.svg';
+import Bell from 'src/assets/bell.svg';
+import { ItemsWrapper, TitleWrapper, ToolsWrapper } from './styled';
 
 const MainPage: ActivityComponentType = () => {
+  const [productList, setProductList] = React.useState<ProductInterface[]>([]);
+
+  const loadProducts = async () => {
+    const { data } = await getProductList();
+
+    setProductList(data);
+  };
+
+  React.useEffect(() => {
+    loadProducts();
+  }, []);
+
   return (
-    <AppScreen>
-      <Header />
+    <AppScreen
+      appBar={{
+        appendLeft: () => (
+          <TitleWrapper>
+            <p>대치2동</p>
+            <img src={Chevron} alt="chevron" />
+          </TitleWrapper>
+        ),
+        appendRight: () => (
+          <ToolsWrapper>
+            <img src={Search} alt="search" />
+            <img src={Control} alt="control" />
+            <img src={Bell} alt="bell" />
+          </ToolsWrapper>
+        ),
+        borderColor: '#43474f',
+      }}
+    >
       <ItemsWrapper>
-        {PRODUCT_LIST_MOCK_DATA.map((data) => (
-          <ProductItem
-            key={data.id}
-            id={data.id}
-            pictureSrc={data.pictureSrc}
-            title={data.title}
-            author={data.author}
-            madeAt={data.madeAt}
-            amount={data.amount}
-          />
+        {productList.map((product) => (
+          <ProductItem key={product.id} item={product} />
         ))}
       </ItemsWrapper>
       <Footer />
@@ -30,9 +54,3 @@ const MainPage: ActivityComponentType = () => {
 };
 
 export default MainPage;
-
-const ItemsWrapper = styled.section`
-  padding: 2.75rem 0 60px;
-  height: calc(100vh - 2.75rem - 60px);
-  overflow-y: auto;
-`;

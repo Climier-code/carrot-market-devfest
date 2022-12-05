@@ -1,20 +1,9 @@
 import styled from 'styled-components';
 
-export const HeaderWrapper = styled.div`
-  position: absolute;
-  top: 0;
-  width: 100%;
-  background-color: #212124;
-`;
-
-export const HeaderContentWrapper = styled.section`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  height: 2.75rem;
-
-  border-bottom: 1px solid #43474f;
+export const ItemsWrapper = styled.section`
+  padding-bottom: 65px;
+  height: calc(100vh - 2.75rem - 65px);
+  overflow-y: auto;
 `;
 
 export const TitleWrapper = styled.div`

@@ -14,31 +14,31 @@ const Footer: React.FC = () => {
           <div>
             <img src={Home} alt="home" />
           </div>
-          <p>Home</p>
+          <p>홈</p>
         </FooterItem>
         <FooterItem>
           <div>
             <img src={Category} alt="Category" />
           </div>
-          <p>Category</p>
+          <p>카테고리</p>
         </FooterItem>
         <FooterItem>
           <div>
             <img src={Sell} alt="Sell" />
           </div>
-          <p>Sell</p>
+          <p>글 쓰기</p>
         </FooterItem>
         <FooterItem>
           <div>
             <img src={Chats} alt="Chats" />
           </div>
-          <p>Chats</p>
+          <p>채팅</p>
         </FooterItem>
         <FooterItem>
           <div>
             <img src={My} alt="My" />
           </div>
-          <p>My</p>
+          <p>나의 당근</p>
         </FooterItem>
       </FooterItemWrapper>
     </FooterWrapper>

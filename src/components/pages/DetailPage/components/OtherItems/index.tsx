@@ -1,24 +1,28 @@
 import React from 'react';
-import { OtherItemsWrapper, OtherItemsContentWrapper, OtherItem } from './styled';
+import { UserOtherProductInterface } from 'src/schemas/Product';
+import { OtherItemsWrapper, OtherItemsContentWrapper, OtherItem, OtherItemImageWrapper } from './styled';
 
 interface Props {
   userName: string;
-  id: string;
+  other: UserOtherProductInterface[];
 }
 
-const OtherItems: React.FC<Props> = ({ userName, id }) => {
+const OtherItems: React.FC<Props> = ({ userName, other }) => {
   return (
     <OtherItemsWrapper>
-      <p className="title">Other Items by {userName}</p>
+      <p className="title">{userName}님의 판매 상품</p>
       <OtherItemsContentWrapper>
-        {Array.from({ length: 20 }).map((_, idx) => (
-          <OtherItem key={idx}>
-            <div>
-              <img src={'https://picsum.photos/800/800/?id=25140667'} alt="mock-img" width={'100%'} height={'100%'} />
-            </div>
-            <p>Ran</p>
+        {other.map((otherProduct) => (
+          <OtherItem key={otherProduct.name}>
+            <OtherItemImageWrapper>
+              <div>
+                <img src={otherProduct.img} alt="otherProductImg" width={'100%'} height={'100%'} />
+              </div>
+            </OtherItemImageWrapper>
+
+            <p>{otherProduct.name}</p>
             <p>
-              <strong>£41.00</strong>
+              <strong>{otherProduct.price}원</strong>
             </p>
           </OtherItem>
         ))}
