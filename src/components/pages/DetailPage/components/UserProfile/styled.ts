@@ -32,16 +32,41 @@ export const UserProfileContent = styled.div`
   }
 `;
 
-export const UserMannerRating = styled.div`
+interface RatingProps {
+  ratingColor: string;
+}
+
+export const UserMannerRating = styled.div<RatingProps>`
   text-align: right;
   margin: -0.375rem 0;
+  display: flex;
+  flex-direction: column;
 
-  & > div.progress {
-    margin-bottom: 0.125rem;
+  & > p {
+    &.rating {
+      color: ${(props) => props.ratingColor};
+    }
+
+    &.link {
+      text-decoration: underline;
+      color: #868b94;
+      font-size: 0.75rem;
+    }
   }
-  & > p.link {
-    text-decoration: underline;
-    color: #868b94;
-    font-size: 0.75rem;
+`;
+
+export const Progress = styled.progress<RatingProps>`
+  width: 3.125rem;
+  height: 0.25rem;
+  appearance: none;
+  margin: 0.25rem 0 0.5rem;
+
+  &::-webkit-progress-bar {
+    background: #34373d;
+    border-radius: 0.25rem;
+  }
+  &::-webkit-progress-value {
+    border-radius: 0.25rem;
+    background: ${(props) => props.ratingColor};
   }
 `;

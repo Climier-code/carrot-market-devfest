@@ -1,6 +1,6 @@
 import React from 'react';
-import MannerRating from 'src/assets/mannerRating.svg';
-import { UserWrapper, UserProfileImage, UserProfileContent, UserMannerRating } from './styled';
+import { getTemperatureColor } from 'src/utils/util';
+import { UserWrapper, UserProfileImage, UserProfileContent, UserMannerRating, Progress } from './styled';
 
 interface Props {
   profileImg: string;
@@ -12,6 +12,8 @@ interface Props {
 const UserProfile: React.FC<Props> = (props) => {
   const { profileImg, userName, rating, location } = props;
 
+  const ratingColor = getTemperatureColor(rating);
+
   return (
     <UserWrapper>
       <UserProfileImage src={profileImg} alt="profileImg" width={'100%'} height={'100%'} />
@@ -19,10 +21,9 @@ const UserProfile: React.FC<Props> = (props) => {
         <p className="name">{userName}</p>
         <p className="location">{location}</p>
       </UserProfileContent>
-      <UserMannerRating>
-        <div className="progress">
-          <img src={MannerRating} alt="rating" />
-        </div>
+      <UserMannerRating ratingColor={ratingColor ?? '#ffb938'}>
+        <p className="rating">{rating}</p>
+        <Progress value={rating} max={100} ratingColor={ratingColor ?? '#ffb938'} />
         <p className="link">매너온도</p>
       </UserMannerRating>
     </UserWrapper>
