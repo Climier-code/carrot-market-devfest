@@ -21,8 +21,8 @@ export const ProductImageWrapper = styled.div`
   background-position: 50% 50%;
 
   img {
-    height: 108px;
-    width: 108px;
+    width: 6.75rem;
+    height: 6.75rem;
   }
 `;
 
