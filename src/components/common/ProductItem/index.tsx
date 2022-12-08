@@ -2,6 +2,7 @@ import React from 'react';
 import { ProductInterface } from 'src/schemas/Product';
 import { getBeforeDays } from 'src/utils/date';
 import { useFlow } from 'src/utils/stackflow';
+import { EllipsisBox } from '../elements';
 import { ProductItemWrapper, ProductImageWrapper, ProductDetailWrapper } from './styled';
 
 interface Props {
@@ -24,7 +25,10 @@ const ProductItem: React.FC<Props> = (props) => {
           <img src={img} alt="product-img" />
         </ProductImageWrapper>
         <ProductDetailWrapper>
-          <p className="name">{name}</p>
+          <EllipsisBox>
+            <p className="name">{name}</p>
+          </EllipsisBox>
+
           <p className="detail">
             {location} · {getBeforeDays(dates)}일 전
           </p>

@@ -20,9 +20,10 @@ export const OtherItem = styled.button`
   background-color: inherit;
   flex-direction: column;
 
-  & > p {
+  p {
     font-size: 0.875rem;
     line-height: 1.25rem;
+    text-align: left;
   }
 `;
 

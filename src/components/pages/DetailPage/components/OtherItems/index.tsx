@@ -1,4 +1,5 @@
 import React from 'react';
+import { EllipsisBox } from 'src/components/common/elements';
 import { UserOtherProductInterface } from 'src/schemas/Product';
 import { OtherItemsWrapper, OtherItemsContentWrapper, OtherItem, OtherItemImageWrapper } from './styled';
 
@@ -20,7 +21,10 @@ const OtherItems: React.FC<Props> = ({ userName, other }) => {
               </div>
             </OtherItemImageWrapper>
 
-            <p>{otherProduct.name}</p>
+            <EllipsisBox>
+              <p>{otherProduct.name}</p>
+            </EllipsisBox>
+
             <p>
               <strong>{otherProduct.price}원</strong>
             </p>
