@@ -4,12 +4,13 @@ import React from 'react';
 import Footer from 'src/components/common/Footer';
 import ProductItem from 'src/components/common/ProductItem';
 import { ProductInterface } from 'src/schemas/Product';
-import { getProductList } from 'src/services';
+
 import Chevron from 'src/assets/chevron.svg';
 import Search from 'src/assets/search.svg';
 import Control from 'src/assets/control.svg';
 import Bell from 'src/assets/bell.svg';
 import { ItemsWrapper, TitleWrapper, ToolsWrapper } from './styled';
+import { getProductList } from 'src/services/product';
 
 const MainPage: ActivityComponentType = () => {
   const [productList, setProductList] = React.useState<ProductInterface[]>([]);
