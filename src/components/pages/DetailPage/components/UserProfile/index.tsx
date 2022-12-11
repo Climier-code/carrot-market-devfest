@@ -22,7 +22,7 @@ const UserProfile: React.FC<Props> = (props) => {
         <p className="location">{location}</p>
       </UserProfileContent>
       <UserMannerRating ratingColor={ratingColor ?? '#ffb938'}>
-        <p className="rating">{rating}</p>
+        <p className="rating">{rating}°C</p>
         <Progress value={rating} max={100} ratingColor={ratingColor ?? '#ffb938'} />
         <p className="link">매너온도</p>
       </UserMannerRating>
