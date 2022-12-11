@@ -2,6 +2,7 @@
   "name": "carrot-market-devfest",
   "version": "0.1.0",
   "private": true,
+  "homepage": "http://Climier-code.github.io/carrot-market-devfest",
   "dependencies": {
     "@stackflow/core": "^0.16.0",
     "@stackflow/plugin-basic-ui": "^0.16.0",
@@ -26,6 +27,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "predeploy": "react-scripts build",
+    "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -52,6 +55,7 @@
     "@typescript-eslint/parser": "^5.43.0",
     "eslint": "^8.28.0",
     "eslint-plugin-react": "^7.31.11",
+    "gh-pages": "^4.0.0",
     "prettier": "^2.7.1"
   }
 }
