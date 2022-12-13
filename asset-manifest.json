@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/carrot-market-devfest/static/css/main.3bb28835.css",
-    "main.js": "/carrot-market-devfest/static/js/main.a5d7def3.js",
+    "main.js": "/carrot-market-devfest/static/js/main.04c1aa0c.js",
     "static/js/787.15902e08.chunk.js": "/carrot-market-devfest/static/js/787.15902e08.chunk.js",
     "static/media/chats.svg": "/carrot-market-devfest/static/media/chats.ad16c22a8dc60e079e339ae0ddaad992.svg",
     "static/media/control.svg": "/carrot-market-devfest/static/media/control.0982b652294a844ac3e56cfc3205b7e9.svg",
@@ -15,11 +15,11 @@
     "static/media/chevron.svg": "/carrot-market-devfest/static/media/chevron.310442c00aa235d5ad9267f24f71f099.svg",
     "static/media/sell.svg": "/carrot-market-devfest/static/media/sell.e0b367b7723ddfb7ad552da25ddcfec8.svg",
     "main.3bb28835.css.map": "/carrot-market-devfest/static/css/main.3bb28835.css.map",
-    "main.a5d7def3.js.map": "/carrot-market-devfest/static/js/main.a5d7def3.js.map",
+    "main.04c1aa0c.js.map": "/carrot-market-devfest/static/js/main.04c1aa0c.js.map",
     "787.15902e08.chunk.js.map": "/carrot-market-devfest/static/js/787.15902e08.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.3bb28835.css",
-    "static/js/main.a5d7def3.js"
+    "static/js/main.04c1aa0c.js"
   ]
 }
