@@ -4,14 +4,10 @@ import React from 'react';
 import Footer from 'src/components/common/Footer';
 import ProductItem from 'src/components/common/ProductItem';
 import { ProductInterface } from 'src/schemas/Product';
-
-import Chevron from 'src/assets/chevron.svg';
-import Search from 'src/assets/search.svg';
-import Control from 'src/assets/control.svg';
-import Bell from 'src/assets/bell.svg';
-import { ItemsWrapper, TitleWrapper, ToolsWrapper } from './styled';
+import { ItemsWrapper } from './styled';
 import { getProductList } from 'src/services/product';
 import { useFlow } from 'src/utils/stackflow';
+import { MainPageAppBarLeft, MainPageAppBarRight } from 'src/components/common/Stackflow';
 
 const MainPage: ActivityComponentType = () => {
   const { push } = useFlow();
@@ -35,19 +31,8 @@ const MainPage: ActivityComponentType = () => {
   return (
     <AppScreen
       appBar={{
-        appendLeft: () => (
-          <TitleWrapper>
-            <p>대치2동</p>
-            <img src={Chevron} alt="chevron" />
-          </TitleWrapper>
-        ),
-        appendRight: () => (
-          <ToolsWrapper>
-            <img src={Search} alt="search" />
-            <img src={Control} alt="control" />
-            <img src={Bell} alt="bell" />
-          </ToolsWrapper>
-        ),
+        appendLeft: MainPageAppBarLeft,
+        appendRight: MainPageAppBarRight,
         borderColor: '#43474f',
       }}
     >

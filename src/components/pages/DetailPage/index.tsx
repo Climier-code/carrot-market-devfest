@@ -1,6 +1,6 @@
 import { AppScreen } from '@stackflow/plugin-basic-ui';
 import React from 'react';
-import { ReactComponent as Back } from 'src/assets/back.svg';
+import { DetailPageBackButton } from 'src/components/common/Stackflow';
 import { ProductInterface, UserInterface } from 'src/schemas/Product';
 import { getProductData } from 'src/services/product';
 import { getUserData } from 'src/services/user';
@@ -22,10 +22,6 @@ const DetailPage: React.FC<DetailParams> = ({ params: { id } }) => {
   const [product, setProduct] = React.useState<ProductInterface>();
   const [user, setUser] = React.useState<UserInterface>();
 
-  const handleBackToMainPage = () => {
-    pop();
-  };
-
   const loadUser = async (userId: number) => {
     const { data } = await getUserData(userId);
     setUser(data);
@@ -46,13 +42,7 @@ const DetailPage: React.FC<DetailParams> = ({ params: { id } }) => {
     <AppScreen
       appBar={{
         backButton: {
-          render() {
-            return (
-              <button onClick={handleBackToMainPage}>
-                <Back />
-              </button>
-            );
-          },
+          render: () => <DetailPageBackButton onClick={pop} />,
         },
         borderColor: '#43474f',
       }}
