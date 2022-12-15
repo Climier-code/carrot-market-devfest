@@ -1,26 +1,21 @@
 import React from 'react';
 import { ProductInterface } from 'src/schemas/Product';
 import { getBeforeDays } from 'src/utils/date';
-import { useFlow } from 'src/utils/stackflow';
 import { EllipsisBox } from '../elements';
 import { ProductItemWrapper, ProductImageWrapper, ProductDetailWrapper } from './styled';
 
 interface Props {
   item: ProductInterface;
+  onClickItem: () => void;
 }
 
 const ProductItem: React.FC<Props> = (props) => {
-  const { id, img, name, dates, price, location } = props.item;
-
-  const { push } = useFlow();
-
-  const handleLinkDetailPage = () => {
-    push('DetailPage', { id: id.toString() });
-  };
+  const { item, onClickItem } = props;
+  const { img, name, dates, price, location } = item;
 
   return (
     <ProductItemWrapper>
-      <button onClick={handleLinkDetailPage}>
+      <button onClick={onClickItem}>
         <ProductImageWrapper>
           <img src={img} alt="product-img" />
         </ProductImageWrapper>

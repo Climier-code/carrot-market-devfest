@@ -11,8 +11,15 @@ import Control from 'src/assets/control.svg';
 import Bell from 'src/assets/bell.svg';
 import { ItemsWrapper, TitleWrapper, ToolsWrapper } from './styled';
 import { getProductList } from 'src/services/product';
+import { useFlow } from 'src/utils/stackflow';
 
 const MainPage: ActivityComponentType = () => {
+  const { push } = useFlow();
+
+  const handleLinkDetailPage = (id: number) => {
+    push('DetailPage', { id: id.toString() });
+  };
+
   const [productList, setProductList] = React.useState<ProductInterface[]>([]);
 
   const loadProducts = async () => {
@@ -46,7 +53,7 @@ const MainPage: ActivityComponentType = () => {
     >
       <ItemsWrapper>
         {productList.map((product) => (
-          <ProductItem key={product.id} item={product} />
+          <ProductItem key={product.id} item={product} onClickItem={() => handleLinkDetailPage(product.id)} />
         ))}
       </ItemsWrapper>
       <Footer />
